@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahsan Growth Agency | Digital Marketing Lahore</title>
+<style>
+:root{--bg:#070b1a;--card:#0f1630;--line:#1f2a55;--red:#e11d2e;--blue:#1d4ed8;--text:#f1f5ff;--mut:#9fb0d9;--wa:#25d366;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(7,11,26,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:18px}.logo b{color:var(--red)}.logo i{color:#5b8cff;font-style:normal}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:var(--mut);font-size:14px}nav a:hover{color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;font-size:22px;border-radius:8px;padding:2px 10px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font-weight:700;font-size:15px;padding:12px 20px;border-radius:10px;color:#fff;background:linear-gradient(90deg,var(--red),var(--blue))}
+.btn.wa{background:var(--wa);color:#04210f}.btn.line{background:transparent;border:1px solid var(--line)}
+.hero{position:relative;padding:70px 0 60px;background:radial-gradient(800px 400px at 85% 0,#1d4ed855,transparent),radial-gradient(700px 400px at 0 20%,#e11d2e40,transparent)}
+.hero svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.35;pointer-events:none}
+.hero .wrap{position:relative}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 14px;font-size:13px;color:var(--mut);margin-bottom:14px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;margin-bottom:14px}
+h1 span{background:linear-gradient(90deg,#ff4d5e,#5b8cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:560px;margin-bottom:22px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}.stats b{font-size:24px;display:block}.stats small{color:var(--mut)}
+section{padding:56px 0}
+h2{font-size:clamp(24px,4vw,34px);margin-bottom:6px}.sub{color:var(--mut);margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:20px}
+.card h3 svg{width:40px;height:40px;flex:none}
+.card ul{list-style:none;padding:0;margin-bottom:16px}
+.card li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.card li a{font-size:12px;font-weight:700;padding:5px 11px;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--blue));white-space:nowrap}
+.card .btn{width:100%;justify-content:center}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.info .card b{display:block;color:#5b8cff;font-size:13px;margin-bottom:4px}
+.stars{color:#fbbf24;letter-spacing:2px}
+#revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+footer{border-top:1px solid var(--line);padding:26px 0 90px;text-align:center;color:var(--mut);font-size:14px}
+.fab{position:fixed;right:16px;z-index:30;border:0;cursor:pointer;border-radius:99px;font-weight:700;padding:13px 18px;color:#fff;box-shadow:0 6px 20px #0008}
+#waFab{bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--wa);color:#04210f}
+#callFab{bottom:calc(70px + env(safe-area-inset-bottom,0px));background:var(--blue)}
+#chatFab{bottom:calc(124px + env(safe-area-inset-bottom,0px));background:var(--red)}
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal.on{display:flex}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;width:100%;max-width:400px}
+input,textarea{width:100%;background:#0a1028;border:1px solid var(--line);color:#fff;border-radius:10px;padding:11px;font:inherit;margin:8px 0}
+#starPick span{font-size:34px;cursor:pointer;color:#475085}#starPick span.on{color:#fbbf24}
+#chat{position:fixed;right:12px;left:12px;max-width:380px;margin-left:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));height:min(520px,75vh);background:var(--card);border:1px solid var(--line);border-radius:16px;display:none;flex-direction:column;z-index:60;overflow:hidden}
+#chat.on{display:flex}
+.ch{padding:12px 14px;background:linear-gradient(90deg,var(--red),var(--blue));display:flex;justify-content:space-between;font-weight:700}
+.ch button{background:none;border:0;color:#fff;font-size:20px}
+#msgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{max-width:85%;padding:9px 12px;border-radius:12px;font-size:14px;white-space:pre-line}
+.m.b{background:#18224a;align-self:flex-start}.m.u{background:var(--blue);align-self:flex-end}
+.q{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px}
+.q button{background:#18224a;border:1px solid var(--line);color:#fff;border-radius:99px;font-size:12px;padding:5px 11px;cursor:pointer}
+.cf{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}.cf input{margin:0}
+@media(max-width:760px){nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px;border-bottom:1px solid var(--line)}nav.on{display:flex}.burger{display:block}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#home"><b>Ahsan</b> <i>Growth</i> Agency</a>
+<button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+<nav id="menu">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="#reviews">Reviews</a><a href="#" id="navChat">Chat Support</a>
+<a class="btn" href="#" data-order="Order Now">Order Now</a>
+</nav></div></header>
+
+<div class="hero" id="home">
+<svg class="bg" viewBox="0 0 800 400" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e11d2e"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>
+<path d="M0 360 L100 320 L200 330 L300 250 L400 270 L520 170 L640 190 L800 60" fill="none" stroke="url(#g)" stroke-width="4"/>
+<g fill="#3b82f6"><rect x="60" y="300" width="22" height="100"/><rect x="160" y="270" width="22" height="130"/><rect x="260" y="230" width="22" height="170"/><rect x="360" y="240" width="22" height="160"/><rect x="460" y="180" width="22" height="220"/><rect x="560" y="150" width="22" height="250"/><rect x="660" y="120" width="22" height="280"/></g></svg>
+<div class="wrap">
+<span class="tag">Digital Marketing &bull; Lahore, Pakistan</span>
+<h1>Apna Social Media <span>Grow Karo</span> Ahsan Growth Agency Ke Saath</h1>
+<p>YouTube, TikTok aur Instagram ke liye complete growth services. Order karo aur seedha WhatsApp par baat karo. 24/7 available.</p>
+<div class="row"><a class="btn wa" href="#" data-order="Order Now">Order Now (WhatsApp)</a><a class="btn" href="tel:+923209020775">Call Now</a><a class="btn line" href="#services">Services Dekho</a></div>
+<div class="stats"><div><b>24/7</b><small>Support</small></div><div><b>3</b><small>Platforms</small></div><div><b class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</b><small>Customer Reviews</small></div></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2>Hamari Services</h2><p class="sub">Apni service chunein aur Order button dabayen, order seedha WhatsApp par aayega.</p>
+<div class="grid">
+<div class="card"><h3><svg viewBox="0 0 48 48"><rect y="9" width="48" height="30" rx="9" fill="#ff0000"/><path d="M19 17v14l12-7z" fill="#fff"/></svg>YouTube</h3><ul id="yt"></ul><a class="btn" href="#" data-order="YouTube Services">Order YouTube</a></div>
+<div class="card"><h3><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#000"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#25f4ee" transform="translate(-1.500 -1)"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#fe2c55" transform="translate(1.500 1)"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#fff"/></svg>TikTok</h3><ul id="tt"></ul><a class="btn" href="#" data-order="TikTok Services">Order TikTok</a></div>
+<div class="card"><h3><svg viewBox="0 0 48 48"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".4" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#ig)"/><rect x="10" y="10" width="28" height="28" rx="9" fill="none" stroke="#fff" stroke-width="3.500"/><circle cx="24" cy="24" r="6.500" fill="none" stroke="#fff" stroke-width="3.500"/><circle cx="32" cy="16" r="2" fill="#fff"/></svg>Instagram</h3><ul id="ig2"></ul><a class="btn" href="#" data-order="Instagram Services">Order Instagram</a></div>
+</div></div></section>
+
+<section id="contact" style="background:#0a1030"><div class="wrap">
+<h2>Contact Info</h2><p class="sub">Hum 24/7 available hain, har din.</p>
+<div class="info">
+<div class="card"><b>BUSINESS</b>Ahsan Growth Agency</div>
+<div class="card"><b>PHONE</b><a href="tel:+923209020775">03209020775</a></div>
+<div class="card"><b>WHATSAPP</b><a href="#" data-order="Hello">03209020775</a></div>
+<div class="card"><b>EMAIL</b><a href="mailto:syedahsa245@gmail.com">syedahsa245@gmail.com</a></div>
+<div class="card"><b>LOCATION</b>Lahore, Pakistan</div>
+<div class="card"><b>TIMING</b>24/7 Available (Sare din)</div>
+<div class="card"><b>FACEBOOK</b><a href="https://www.facebook.com/share/18aiWBWDWH/" target="_blank" rel="noopener">Hamara Facebook Page</a></div>
+</div>
+<div class="row" style="margin-top:22px"><a class="btn wa" href="#" data-order="Hello">WhatsApp Karo</a><a class="btn" href="tel:+923209020775">Call Karo</a><a class="btn line" href="https://www.facebook.com/share/18aiWBWDWH/" target="_blank" rel="noopener">Facebook Page</a></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<h2>Customer Reviews</h2><p class="sub"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Apna review likhein</p>
+<button class="btn" id="revBtn">&#9733; Review Dein (5 Stars)</button>
+<div id="revs"></div>
+</div></section>
+
+<footer><div class="wrap">&copy; 2026 Ahsan Growth Agency &bull; Lahore, Pakistan &bull; 03209020775</div></footer>
+
+<button class="fab" id="chatFab">Chat Support</button>
+<a class="fab" id="callFab" href="tel:+923209020775">Call</a>
+<a class="fab" id="waFab" href="#" data-order="Hello">WhatsApp</a>
+
+<div class="modal" id="rm"><div class="box"><h3>Apna Review Dein</h3>
+<div id="starPick"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+<input id="rn" placeholder="Aapka naam"><textarea id="rt" rows="3" placeholder="Review likhein"></textarea>
+<div class="row"><button class="btn" id="rs">Submit</button><button class="btn line" id="rc">Cancel</button></div></div></div>
+
+<div id="chat"><div class="ch"><span>AI Assistant &mdash; Ahsan Growth</span><button id="cx">&times;</button></div>
+<div id="msgs"></div><div class="q" id="qk"></div>
+<div class="cf"><input id="ci" placeholder="Apna sawal likhein..."><button class="btn" id="cs">Send</button></div></div>
+
+<script>
+var NUM="923209020775",$=function(i){return document.getElementById(i)};
+function wa(t){return"https://wa.me/"+NUM+"?text="+encodeURIComponent(t)}
+var S={yt:["Watch Time","Monetization","YouTube Channel","Subscribers","Views"],tt:["Followers","Likes","Views","Accounts","Monetization Help"],ig2:["Followers","Likes","Reel Views","Accounts","Growth Management"]};
+var P={yt:"YouTube",tt:"TikTok",ig2:"Instagram"};
+Object.keys(S).forEach(function(k){$(k).innerHTML=S[k].map(function(s){return'<li>'+s+' <a href="#" data-order="'+P[k]+' - '+s+'">Order Now</a></li>'}).join("")});
+document.addEventListener("click",function(e){var a=e.target.closest("[data-order]");if(a){e.preventDefault();window.open(wa("Assalam o Alaikum, mujhe Ahsan Growth Agency se order karna hai: "+a.getAttribute("data-order")),"_blank")}});
+$("burger").onclick=function(){$("menu").classList.toggle("on")};
+$("menu").onclick=function(e){if(e.target.tagName=="A")$("menu").classList.remove("on")};
+/* Reviews */
+var R=[{n:"Ali Raza",t:"Bohat acha kaam aur fast support.",s:5},{n:"Hina Malik",t:"WhatsApp par foran jawab mila.",s:5}],pick=5;
+try{var sv=JSON.parse(localStorage.getItem("rv")||"[]");R=R.concat(sv)}catch(e){}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function drawR(){$("revs").innerHTML=R.map(function(r){return'<div class="card"><div class="stars">'+"&#9733;".repeat(r.s)+'</div><p>'+esc(r.t)+'</p><small style="color:var(--mut)">&mdash; '+esc(r.n)+'</small></div>'}).join("")}
+drawR();
+var st=$("starPick").children;function setS(n){pick=n;for(var i=0;i<5;i++)st[i].className=i<n?"on":""}
+for(var i=0;i<5;i++)(function(i){st[i].onclick=function(){setS(i+1)}})(i);setS(5);
+$("revBtn").onclick=function(){$("rm").classList.add("on")};$("rc").onclick=function(){$("rm").classList.remove("on")};
+$("rs").onclick=function(){var n=$("rn").value.trim()||"Customer",t=$("rt").value.trim();if(!t)return;var r={n:n,t:t,s:pick};R.push(r);
+try{var sv=JSON.parse(localStorage.getItem("rv")||"[]");sv.push(r);localStorage.setItem("rv",JSON.stringify(sv))}catch(e){}
+drawR();$("rm").classList.remove("on");$("rt").value="";
+window.open(wa("Review ("+pick+" stars) from "+n+": "+t),"_blank")};
+/* Chat support */
+var log=[];function add(c,t){var d=document.createElement("div");d.className="m "+c;d.textContent=t;$("msgs").appendChild(d);$("msgs").scrollTop=1e5;log.push((c=="u"?"Customer: ":"Bot: ")+t)}
+var Q=["YouTube","TikTok","Instagram","Timing","Contact","Order kaise karun"];
+$("qk").innerHTML=Q.map(function(q){return"<button>"+q+"</button>"}).join("");
+function reply(q){var t=q.toLowerCase();
+if(/youtube|watch|monetiz|subscri|channel/.test(t))return"YouTube services: Watch Time, Monetization, YouTube Channel, Subscribers aur Views. Order ke liye WhatsApp par baat karein.";
+if(/tiktok|tik tok/.test(t))return"TikTok services: Followers, Likes, Views, Accounts aur Monetization Help available hain.";
+if(/insta|reel/.test(t))return"Instagram services: Followers, Likes, Reel Views, Accounts aur Growth Management available hain.";
+if(/time|timing|open|available|kab/.test(t))return"Hum 24/7 available hain, har din.";
+if(/contact|number|phone|call|email|whatsapp|location|lahore/.test(t))return"WhatsApp/Call: 03209020775\nEmail: syedahsa245@gmail.com\nLocation: Lahore, Pakistan";
+if(/order|kaise|buy|price|rate|charges|kitn/.test(t))return"Order ke liye service ke samne Order Now dabayen, aap seedha hamare WhatsApp par pahunch jayenge. Rates ke liye WhatsApp par poochein.";
+if(/hi|hello|salam|assalam/.test(t))return"Walaikum Assalam! Main Ahsan Growth Agency ka assistant hoon. Kis service ke bare me janna chahte hain?";
+return"Is sawal ka behtar jawab Ahsan bhai khud denge. Neeche WhatsApp button dabayen.";}
+function send(q){q=q.trim();if(!q)return;add("u",q);setTimeout(function(){add("b",reply(q))},350)}
+$("qk").onclick=function(e){if(e.target.tagName=="BUTTON")send(e.target.textContent)};
+$("cs").onclick=function(){send($("ci").value);$("ci").value=""};
+$("ci").onkeydown=function(e){if(e.key=="Enter"){send($("ci").value);$("ci").value=""}};
+function openChat(){$("chat").classList.add("on");if(!log.length){add("b","Assalam o Alaikum! Main Ahsan Growth Agency ka AI assistant hoon. Aap kya poochna chahte hain?");var b=document.createElement("button");b.className="btn wa";b.textContent="Ahsan se WhatsApp par baat karein";b.style.alignSelf="flex-start";b.onclick=function(){window.open(wa("Chat support se aya hoon:\n"+log.slice(-8).join("\n")),"_blank")};$("msgs").appendChild(b)}}
+$("chatFab").onclick=openChat;$("navChat").onclick=function(e){e.preventDefault();openChat()};$("cx").onclick=function(){$("chat").classList.remove("on")};
+</script>
+</body>
+                                                                                                                                                                                                                                                              </html>
