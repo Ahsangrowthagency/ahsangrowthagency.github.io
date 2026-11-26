@@ -64,6 +64,11 @@ input,textarea{width:100%;background:#0a1028;border:1px solid var(--line);color:
 .q button{background:#18224a;border:1px solid var(--line);color:#fff;border-radius:99px;font-size:12px;padding:5px 11px;cursor:pointer}
 .cf{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}.cf input{margin:0}
 @media(max-width:760px){nav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px;border-bottom:1px solid var(--line)}nav.on{display:flex}.burger{display:block}}
+.pay small{display:block;color:var(--mut);font-size:12px;margin-top:10px}.pay b{display:block;font-size:17px}
+.badge{display:inline-block;color:#fff;font-weight:800;font-size:13px;padding:5px 12px;border-radius:99px;margin-bottom:4px}
+.pay .num{font-size:22px;font-weight:800;letter-spacing:1px;margin:2px 0 14px;word-break:break-all}
+.pay.na{opacity:.65}
+.notice{margin-top:26px;background:#2a2308;border:1px solid #8a6d12;border-radius:14px;padding:18px 20px;color:#fde68a}
 </style>
 </head>
 <body>
@@ -71,7 +76,7 @@ input,textarea{width:100%;background:#0a1028;border:1px solid var(--line);color:
 <a class="logo" href="#home"><b>Ahsan</b> <i>Growth</i> Agency</a>
 <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
 <nav id="menu">
-<a href="#home">Home</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="#reviews">Reviews</a><a href="#" id="navChat">Chat Support</a>
+<a href="#home">Home</a><a href="#services">Services</a><a href="#payment">Payment</a><a href="#contact">Contact</a><a href="#reviews">Reviews</a><a href="#" id="navChat">Chat Support</a>
 <a class="btn" href="#" data-order="Order Now">Order Now</a>
 </nav></div></header>
 
@@ -94,6 +99,8 @@ input,textarea{width:100%;background:#0a1028;border:1px solid var(--line);color:
 <div class="card"><h3><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#000"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#25f4ee" transform="translate(-1.500 -1)"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#fe2c55" transform="translate(1.500 1)"/><path d="M26 10h5c.4 4 3 6.500 7 7v5c-2.500 0-4.800-.8-7-2.300V30a9 9 0 1 1-9-9v5.200a4 4 0 1 0 4 3.800z" fill="#fff"/></svg>TikTok</h3><ul id="tt"></ul><a class="btn" href="#" data-order="TikTok Services">Order TikTok</a></div>
 <div class="card"><h3><svg viewBox="0 0 48 48"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".4" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#ig)"/><rect x="10" y="10" width="28" height="28" rx="9" fill="none" stroke="#fff" stroke-width="3.500"/><circle cx="24" cy="24" r="6.500" fill="none" stroke="#fff" stroke-width="3.500"/><circle cx="32" cy="16" r="2" fill="#fff"/></svg>Instagram</h3><ul id="ig2"></ul><a class="btn" href="#" data-order="Instagram Services">Order Instagram</a></div>
 </div></div></section>
+
+<section id="payment"><div class="wrap"><h2>Payment Methods</h2><p class="sub">Neeche diye gaye kisi bhi account mein payment bhejein.</p><div class="grid"><div class="card pay"><span class="badge" style="background:#16a34a">Easypaisa</span><small>Account Title</small><b>Syed Muhammad Ahsan</b><small>Mobile Account</small><div class="num">03209020775</div><button class="btn copy" data-copy="03209020775">Copy Number</button></div><div class="card pay"><span class="badge" style="background:#0f766e">SadaPay</span><small>Account Title</small><b>Syed Muhammad Ahsan</b><small>Mobile Account</small><div class="num">03209020775</div><button class="btn copy" data-copy="03209020775">Copy Number</button></div><div class="card pay"><span class="badge" style="background:#1d4ed8">Standard Chartered Bank</span><small>Account Title</small><b>Syed Muhammad Ahsan</b><small>Account Number</small><div class="num">01032747301</div><button class="btn copy" data-copy="01032747301">Copy Number</button></div><div class="card pay na"><span class="badge" style="background:#64748b">JazzCash</span><b>Not Available</b><p style="color:var(--mut);font-size:14px">JazzCash se payment abhi qabool nahi ki jati.</p></div></div><div class="notice"><b>Zaroori:</b> Payment karne ke baad <b>screenshot zaroor WhatsApp par bhejein</b>, tab hi order shuru hoga.<br><a class="btn wa" href="#" data-order="Maine payment kar di hai, screenshot bhej raha hoon" style="margin-top:12px">Screenshot WhatsApp Par Bhejein</a></div></div></section>
 
 <section id="contact" style="background:#0a1030"><div class="wrap">
 <h2>Contact Info</h2><p class="sub">Hum 24/7 available hain, har din.</p>
@@ -139,6 +146,9 @@ Object.keys(S).forEach(function(k){$(k).innerHTML=S[k].map(function(s){return'<l
 document.addEventListener("click",function(e){var a=e.target.closest("[data-order]");if(a){e.preventDefault();window.open(wa("Assalam o Alaikum, mujhe Ahsan Growth Agency se order karna hai: "+a.getAttribute("data-order")),"_blank")}});
 $("burger").onclick=function(){$("menu").classList.toggle("on")};
 $("menu").onclick=function(e){if(e.target.tagName=="A")$("menu").classList.remove("on")};
+document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.getAttribute("data-copy"),d=function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Number"},1500)};
+function fb(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(x){}a.remove();d()}
+try{navigator.clipboard.writeText(t).then(d,fb)}catch(x){fb()}});
 /* Reviews */
 var R=[{n:"Ali Raza",t:"Bohat acha kaam aur fast support.",s:5},{n:"Hina Malik",t:"WhatsApp par foran jawab mila.",s:5}],pick=5;
 try{var sv=JSON.parse(localStorage.getItem("rv")||"[]");R=R.concat(sv)}catch(e){}
@@ -162,6 +172,7 @@ if(/tiktok|tik tok/.test(t))return"TikTok services: Followers, Likes, Views, Acc
 if(/insta|reel/.test(t))return"Instagram services: Followers, Likes, Reel Views, Accounts aur Growth Management available hain.";
 if(/time|timing|open|available|kab/.test(t))return"Hum 24/7 available hain, har din.";
 if(/contact|number|phone|call|email|whatsapp|location|lahore/.test(t))return"WhatsApp/Call: 03209020775\nEmail: syedahsa245@gmail.com\nLocation: Lahore, Pakistan";
+if(/pay|easypaisa|sadapay|sada|bank|jazz|account|screenshot/.test(t))return"Payment Easypaisa, SadaPay ya Standard Chartered Bank mein ho sakti hai (JazzCash available nahi). Details website ke Payment section mein hain. Payment ke baad screenshot zaroor WhatsApp par bhejein.";
 if(/order|kaise|buy|price|rate|charges|kitn/.test(t))return"Order ke liye service ke samne Order Now dabayen, aap seedha hamare WhatsApp par pahunch jayenge. Rates ke liye WhatsApp par poochein.";
 if(/hi|hello|salam|assalam/.test(t))return"Walaikum Assalam! Main Ahsan Growth Agency ka assistant hoon. Kis service ke bare me janna chahte hain?";
 return"Is sawal ka behtar jawab Ahsan bhai khud denge. Neeche WhatsApp button dabayen.";}
@@ -173,4 +184,4 @@ function openChat(){$("chat").classList.add("on");if(!log.length){add("b","Assal
 $("chatFab").onclick=openChat;$("navChat").onclick=function(e){e.preventDefault();openChat()};$("cx").onclick=function(){$("chat").classList.remove("on")};
 </script>
 </body>
-                                                                                                                                                                                                                                                              </html>
+</html>
